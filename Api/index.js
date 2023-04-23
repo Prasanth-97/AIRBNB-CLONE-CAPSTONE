@@ -143,19 +143,6 @@ app.post('/api/upload-by-link', async (req,res) => {
   res.json(url);
 });
 
-// const photosMiddleWare = multer({dest : "uploads/"});
-// app.post("/upload",photosMiddleWare.array("photos",100),(req,res)=>{
-//   const uploadedFiles = [];
-//   for(let i=0 ; i < req.files.length ; i++){
-//    const {path,originalname} = req.files[i];
-//   const parts =  originalname.split(".");
-//   const ext = parts[parts.length-1];
-//   const newPath = path +"."+ext;
-//    fs.renameSync(path,newPath);
-//    uploadedFiles.push(newPath.replace("uploads/",''));
-//   }
-//   res.json(uploadedFiles);
-// });
 
 app.post('/api/places', (req,res) => {
   mongoose.connect(process.env.MONGO_URL);
