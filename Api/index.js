@@ -27,7 +27,7 @@ app.use(cors({
 }));
 
 // mongoose.connect(process.env.MONGO_URL);
-const PORT = process.env.PORT;
+// const PORT = process.env.PORT;
 
 async function uploadToS3 (path,originalFilename,mimetype){
   const client = new S3Client({
@@ -237,4 +237,4 @@ app.get("/api/bookings",async(req,res) => {
  res.json(await Booking.find({user : userData.id}).populate("place"));
 });
 
-app.listen(PORT, () => console.log(`The server started in: ${PORT} ✨✨`));
+app.listen(4000, () => console.log(`The server started in: 4000 ✨✨`));
